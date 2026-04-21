@@ -1,0 +1,14 @@
+C:\Users\Usuario\source\repos\TestSequorAPI\API\TemperatureDataLogger\TemperatureDataLogger\bin\Debug\TemperatureDataLogger.exe.config
+C:\Users\Usuario\source\repos\TestSequorAPI\API\TemperatureDataLogger\TemperatureDataLogger\bin\Debug\TemperatureDataLogger.exe
+C:\Users\Usuario\source\repos\TestSequorAPI\API\TemperatureDataLogger\TemperatureDataLogger\bin\Debug\TemperatureDataLogger.pdb
+C:\Users\Usuario\source\repos\TestSequorAPI\API\TemperatureDataLogger\TemperatureDataLogger\obj\Debug\TemperatureDataLogger.csproj.AssemblyReference.cache
+C:\Users\Usuario\source\repos\TestSequorAPI\API\TemperatureDataLogger\TemperatureDataLogger\obj\Debug\TemperatureDataLogger.Form1.resources
+C:\Users\Usuario\source\repos\TestSequorAPI\API\TemperatureDataLogger\TemperatureDataLogger\obj\Debug\TemperatureDataLogger.Properties.Resources.resources
+C:\Users\Usuario\source\repos\TestSequorAPI\API\TemperatureDataLogger\TemperatureDataLogger\obj\Debug\TemperatureDataLogger.csproj.GenerateResource.cache
+C:\Users\Usuario\source\repos\TestSequorAPI\API\TemperatureDataLogger\TemperatureDataLogger\obj\Debug\TemperatureDataLogger.csproj.CoreCompileInputs.cache
+C:\Users\Usuario\source\repos\TestSequorAPI\API\TemperatureDataLogger\TemperatureDataLogger\obj\Debug\TemperatureDataLogger.exe
+C:\Users\Usuario\source\repos\TestSequorAPI\API\TemperatureDataLogger\TemperatureDataLogger\obj\Debug\TemperatureDataLogger.pdb
+C:\Users\Usuario\source\repos\TestSequorAPI\API\TemperatureDataLogger\TemperatureDataLogger\bin\Debug\NModbus4.dll
+C:\Users\Usuario\source\repos\TestSequorAPI\API\TemperatureDataLogger\TemperatureDataLogger\bin\Debug\NModbus4.xml
+C:\Users\Usuario\source\repos\TestSequorAPI\API\TemperatureDataLogger\TemperatureDataLogger\obj\Debug\Temperat.D468B5F5.Up2Date
+C:\Users\Usuario\source\repos\TestSequorAPI\API\TemperatureDataLogger\TemperatureDataLogger\obj\Debug\TemperatureDataLogger.DataLoggerPage.resources
