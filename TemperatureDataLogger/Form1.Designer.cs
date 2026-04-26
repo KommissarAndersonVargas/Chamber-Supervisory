@@ -93,7 +93,6 @@
             this.menuStrip.Size = new System.Drawing.Size(898, 66);
             this.menuStrip.TabIndex = 0;
             this.menuStrip.Text = "toolStrip1";
-            this.menuStrip.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip_ItemClicked);
             // 
             // SaveChart
             // 
@@ -192,7 +191,6 @@
             this.lblMaxValue.Name = "lblMaxValue";
             this.lblMaxValue.Size = new System.Drawing.Size(88, 63);
             this.lblMaxValue.Text = "Valor Min:";
-            this.lblMaxValue.Click += new System.EventHandler(this.lblMaxValue_Click);
             // 
             // txtbMinTemp
             // 
@@ -294,7 +292,6 @@
             this.plantPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.plantPictureBox.TabIndex = 2;
             this.plantPictureBox.TabStop = false;
-            this.plantPictureBox.Click += new System.EventHandler(this.plantPictureBox_Click);
             // 
             // variableChart
             // 
@@ -311,7 +308,6 @@
             this.variableChart.Series.Add(series3);
             this.variableChart.Size = new System.Drawing.Size(521, 410);
             this.variableChart.TabIndex = 2;
-            this.variableChart.Click += new System.EventHandler(this.variableChart_Click);
             // 
             // toolStripSeparator6
             // 

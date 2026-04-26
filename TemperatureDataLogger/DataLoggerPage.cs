@@ -1,12 +1,16 @@
-﻿using System;
+﻿using OfficeOpenXml;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
+using LicenseContext = OfficeOpenXml.LicenseContext;
 
 namespace TemperatureDataLogger
 {
@@ -15,6 +19,7 @@ namespace TemperatureDataLogger
         public DataLoggerPage()
         {
             InitializeComponent();
+            ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
         }
 
         private void DataLoggerPage_Load(object sender, EventArgs e)
@@ -37,6 +42,32 @@ namespace TemperatureDataLogger
             }
             catch (Exception)
             {
+            }
+        }
+
+        private void Export_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            
+
+            saveFileDialog.Filter = "Excel Files|*.xlsx";
+            saveFileDialog.FileName = "Exportado.xlsx";
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                using (var package = new ExcelPackage())
+                {
+                    var worksheet = package.Workbook.Worksheets.Add("Exportado");
+
+                    // Exporta cabeçalhos e dados em poucas linhas
+                    for (int i = 0; i < dataGridView.Columns.Count; i++)
+                        worksheet.Cells[1, i + 1].Value = dataGridView.Columns[i].HeaderText;
+
+                    for (int i = 0; i < dataGridView.Rows.Count; i++)
+                        for (int j = 0; j < dataGridView.Columns.Count; j++)
+                            worksheet.Cells[i + 2, j + 1].Value = dataGridView.Rows[i].Cells[j].Value;
+
+                    package.SaveAs(new FileInfo(saveFileDialog.FileName));
+                }
             }
         }
     }

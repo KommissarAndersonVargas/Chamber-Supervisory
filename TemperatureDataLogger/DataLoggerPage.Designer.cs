@@ -80,6 +80,7 @@
             this.Export.Size = new System.Drawing.Size(64, 74);
             this.Export.Text = "Exportar";
             this.Export.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.Export.Click += new System.EventHandler(this.Export_Click);
             // 
             // toolStripSeparator1
             // 

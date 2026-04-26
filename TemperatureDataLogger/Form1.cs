@@ -25,22 +25,18 @@ namespace TemperatureDataLogger
 
         public void ConfigureTimer()
         {
-
             CommunicationTimmer.Interval = 1000;
             CommunicationTimmer.Tick += Timer_Tick;
             CommunicationTimmer.Start();
-
         }
 
         public void ConfigureIpConnection()
         {
-            //client = new TcpClient("192.168.1.6", 502); // IP do ESP
             client = new TcpClient();
 
             client.Connect(ipConnectTextBox.Text, 502);
 
             master = ModbusIpMaster.CreateIp(client);
-
         }
 
         public void LoadVisorConfig()
@@ -50,7 +46,7 @@ namespace TemperatureDataLogger
             RchtSensorDisplay.ForeColor = Color.Red;
             RchtSensorDisplay.BorderStyle = BorderStyle.None;
             RchtSensorDisplay.SelectionAlignment = HorizontalAlignment.Center;
-            RchtSensorDisplay.Text = "7 °C";
+            RchtSensorDisplay.Text = "ERR0R";
         }
 
         private void Timer_Tick(object sender, EventArgs e)
@@ -147,23 +143,13 @@ namespace TemperatureDataLogger
         {
         }
 
-        private void plantPictureBox_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void menuStrip_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
-        }
-
         private void conectButton_Click(object sender, EventArgs e)
         {
             try
             {
                 ConfigureIpConnection();
-                ConfigureTimer(); // 🔥 só começa aqui
-                MessageBox.Show("Conectado com sucesso!");
+                ConfigureTimer();
+                MessageBox.Show("Conectado com sucesso", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             catch (Exception ex)
             {
@@ -175,16 +161,6 @@ namespace TemperatureDataLogger
         {
             var dataForm = new DataLoggerPage();
             dataForm.Show();
-        }
-
-        private void lblMaxValue_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void variableChart_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void SaveChart_Click(object sender, EventArgs e)
