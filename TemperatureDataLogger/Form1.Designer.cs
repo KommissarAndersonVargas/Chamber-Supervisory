@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.menuStrip = new System.Windows.Forms.ToolStrip();
             this.SaveChart = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
@@ -42,23 +42,22 @@
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.DataLoggerBase = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
-            this.lblMinValue = new System.Windows.Forms.ToolStripLabel();
-            this.txtbMaxTemp = new System.Windows.Forms.ToolStripTextBox();
-            this.lblCelcius1 = new System.Windows.Forms.ToolStripLabel();
             this.lblMaxValue = new System.Windows.Forms.ToolStripLabel();
             this.txtbMinTemp = new System.Windows.Forms.ToolStripTextBox();
-            this.lblCelcius2 = new System.Windows.Forms.ToolStripLabel();
+            this.lblCelcius1 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
+            this.lblMinValue = new System.Windows.Forms.ToolStripLabel();
+            this.txtbMaxTemp = new System.Windows.Forms.ToolStripTextBox();
+            this.lblCelcius2 = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
             this.plantPanel = new System.Windows.Forms.Panel();
             this.wirePanel1 = new System.Windows.Forms.Panel();
-            this.activatePunBtn = new System.Windows.Forms.Button();
             this.RchtSensorDisplay = new System.Windows.Forms.RichTextBox();
             this.alarmStateBtn = new System.Windows.Forms.Button();
             this.wirePanel2 = new System.Windows.Forms.Panel();
             this.plantPictureBox = new System.Windows.Forms.PictureBox();
             this.CommunicationTimmer = new System.Windows.Forms.Timer(this.components);
             this.variableChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
             this.menuStrip.SuspendLayout();
             this.plantPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.plantPictureBox)).BeginInit();
@@ -165,26 +164,6 @@
             this.toolStripSeparator4.Name = "toolStripSeparator4";
             this.toolStripSeparator4.Size = new System.Drawing.Size(6, 66);
             // 
-            // lblMinValue
-            // 
-            this.lblMinValue.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMinValue.Name = "lblMinValue";
-            this.lblMinValue.Size = new System.Drawing.Size(91, 63);
-            this.lblMinValue.Text = "Valor Máx:";
-            // 
-            // txtbMaxTemp
-            // 
-            this.txtbMaxTemp.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtbMaxTemp.Name = "txtbMaxTemp";
-            this.txtbMaxTemp.Size = new System.Drawing.Size(60, 66);
-            // 
-            // lblCelcius1
-            // 
-            this.lblCelcius1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCelcius1.Name = "lblCelcius1";
-            this.lblCelcius1.Size = new System.Drawing.Size(26, 63);
-            this.lblCelcius1.Text = "°C";
-            // 
             // lblMaxValue
             // 
             this.lblMaxValue.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -198,6 +177,31 @@
             this.txtbMinTemp.Name = "txtbMinTemp";
             this.txtbMinTemp.Size = new System.Drawing.Size(60, 66);
             // 
+            // lblCelcius1
+            // 
+            this.lblCelcius1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCelcius1.Name = "lblCelcius1";
+            this.lblCelcius1.Size = new System.Drawing.Size(26, 63);
+            this.lblCelcius1.Text = "°C";
+            // 
+            // toolStripSeparator5
+            // 
+            this.toolStripSeparator5.Name = "toolStripSeparator5";
+            this.toolStripSeparator5.Size = new System.Drawing.Size(6, 66);
+            // 
+            // lblMinValue
+            // 
+            this.lblMinValue.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMinValue.Name = "lblMinValue";
+            this.lblMinValue.Size = new System.Drawing.Size(91, 63);
+            this.lblMinValue.Text = "Valor Máx:";
+            // 
+            // txtbMaxTemp
+            // 
+            this.txtbMaxTemp.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtbMaxTemp.Name = "txtbMaxTemp";
+            this.txtbMaxTemp.Size = new System.Drawing.Size(60, 66);
+            // 
             // lblCelcius2
             // 
             this.lblCelcius2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -205,17 +209,16 @@
             this.lblCelcius2.Size = new System.Drawing.Size(26, 63);
             this.lblCelcius2.Text = "°C";
             // 
-            // toolStripSeparator5
+            // toolStripSeparator6
             // 
-            this.toolStripSeparator5.Name = "toolStripSeparator5";
-            this.toolStripSeparator5.Size = new System.Drawing.Size(6, 66);
+            this.toolStripSeparator6.Name = "toolStripSeparator6";
+            this.toolStripSeparator6.Size = new System.Drawing.Size(6, 66);
             // 
             // plantPanel
             // 
             this.plantPanel.BackColor = System.Drawing.SystemColors.ControlDark;
             this.plantPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.plantPanel.Controls.Add(this.wirePanel1);
-            this.plantPanel.Controls.Add(this.activatePunBtn);
             this.plantPanel.Controls.Add(this.RchtSensorDisplay);
             this.plantPanel.Controls.Add(this.alarmStateBtn);
             this.plantPanel.Controls.Add(this.wirePanel2);
@@ -233,19 +236,6 @@
             this.wirePanel1.Name = "wirePanel1";
             this.wirePanel1.Size = new System.Drawing.Size(10, 119);
             this.wirePanel1.TabIndex = 1;
-            // 
-            // activatePunBtn
-            // 
-            this.activatePunBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.activatePunBtn.BackColor = System.Drawing.Color.OliveDrab;
-            this.activatePunBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.activatePunBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.activatePunBtn.Location = new System.Drawing.Point(3, 350);
-            this.activatePunBtn.Name = "activatePunBtn";
-            this.activatePunBtn.Size = new System.Drawing.Size(203, 46);
-            this.activatePunBtn.TabIndex = 4;
-            this.activatePunBtn.Text = "Ligar Compressor Reserva";
-            this.activatePunBtn.UseVisualStyleBackColor = false;
             // 
             // RchtSensorDisplay
             // 
@@ -295,24 +285,19 @@
             // 
             // variableChart
             // 
-            chartArea3.Name = "ChartArea1";
-            this.variableChart.ChartAreas.Add(chartArea3);
+            chartArea2.Name = "ChartArea1";
+            this.variableChart.ChartAreas.Add(chartArea2);
             this.variableChart.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend3.Name = "Legend1";
-            this.variableChart.Legends.Add(legend3);
+            legend2.Name = "Legend1";
+            this.variableChart.Legends.Add(legend2);
             this.variableChart.Location = new System.Drawing.Point(377, 66);
             this.variableChart.Name = "variableChart";
-            series3.ChartArea = "ChartArea1";
-            series3.Legend = "Legend1";
-            series3.Name = "Series1";
-            this.variableChart.Series.Add(series3);
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.variableChart.Series.Add(series2);
             this.variableChart.Size = new System.Drawing.Size(521, 410);
             this.variableChart.TabIndex = 2;
-            // 
-            // toolStripSeparator6
-            // 
-            this.toolStripSeparator6.Name = "toolStripSeparator6";
-            this.toolStripSeparator6.Size = new System.Drawing.Size(6, 66);
             // 
             // Form1
             // 
@@ -345,7 +330,6 @@
         private System.Windows.Forms.Panel wirePanel2;
         private System.Windows.Forms.Button alarmStateBtn;
         private System.Windows.Forms.RichTextBox RchtSensorDisplay;
-        private System.Windows.Forms.Button activatePunBtn;
         private System.Windows.Forms.Timer CommunicationTimmer;
         private System.Windows.Forms.DataVisualization.Charting.Chart variableChart;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;

@@ -1,11 +1,10 @@
 ﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
-using System.Drawing.Text;
 using Modbus.Device;
 using System.Net.Sockets;
 using System.Windows.Forms.DataVisualization.Charting;
-using System.Runtime.CompilerServices;
+using System.Threading;
 
 namespace TemperatureDataLogger
 {
@@ -32,11 +31,19 @@ namespace TemperatureDataLogger
 
         public void ConfigureIpConnection()
         {
-            client = new TcpClient();
+            try
+            {
+                client = new TcpClient();
 
-            client.Connect(ipConnectTextBox.Text, 502);
+                client.Connect(ipConnectTextBox.Text, 502);
 
-            master = ModbusIpMaster.CreateIp(client);
+                master = ModbusIpMaster.CreateIp(client);
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Erro ao conectar: {ex.Message}");
+            }
         }
 
         public void LoadVisorConfig()
@@ -62,11 +69,54 @@ namespace TemperatureDataLogger
                 this.UpdateSensor(cache, valor);
 
                 cache = valor;
+
+                double tempValue = double.Parse(valor);
+                var maxValue = double.TryParse(txtbMaxTemp.Text.ToString(), out double max);
+                var minValue = double.TryParse(txtbMinTemp.Text.ToString(), out double min);
+                var cacheMax = max;
+                var cacheMin = min;   
+                var isntNullTxtbox = !string.IsNullOrEmpty(txtbMaxTemp.Text) && !string.IsNullOrEmpty(txtbMinTemp.Text);
+                var isMinOrMax = tempValue < min || tempValue > max;
+                var canTurnOnPump = isntNullTxtbox && isMinOrMax;
+
+                ChangeConnection(cacheMin, cacheMax, max, min);
+
+                if (canTurnOnPump)
+                {
+                          master.WriteSingleRegister(
+                                      1, // slave id (esp geralmente = 1)
+                                      1, // endereço do registrador (reg_cmd)
+                                      1  // valor a escrever
+                                      );
+
+                    alarmStateBtn.BackColor = Color.Red;
+                    alarmStateBtn.Text = "Alarme: Alarme ocorrendo";
+                }
+
+                else
+                {
+                    master.WriteSingleRegister(
+                              1, // slave id (esp geralmente = 1)
+                              1, // endereço do registrador (reg_cmd)
+                              0  // valor a escrever
+                              );
+
+                    alarmStateBtn.BackColor = Color.Chartreuse;
+                    alarmStateBtn.Text = "Alarme: Sem alarmes";
+                }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 CommunicationTimmer.Stop();
-                MessageBox.Show("Falha na comunicação com o ESP", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Falha na comunicação com o ESP {ex.ToString()}", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void ChangeConnection(double cacheMin, double cacheMax, double max, double min)
+        {
+            if(cacheMin != min || cacheMax != max)
+            {
+                Thread.Sleep(500);
             }
         }
 
@@ -149,7 +199,7 @@ namespace TemperatureDataLogger
             {
                 ConfigureIpConnection();
                 ConfigureTimer();
-                MessageBox.Show("Conectado com sucesso", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("Conectado com sucesso", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {

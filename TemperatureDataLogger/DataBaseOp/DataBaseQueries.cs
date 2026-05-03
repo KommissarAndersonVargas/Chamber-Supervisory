@@ -27,6 +27,9 @@ namespace TemperatureDataLogger
                 (@DataAndTime, @TemperatureValue, @MaxTemp, @MinTemp);
             ";
 
+        private static string getQuery = "SELECT * FROM Supervisory.dbo.Temperatures_Table " +
+               "WHERE Data_and_time >= @DataHora AND Data_and_time < DATEADD(MINUTE, 1, @DataHora)";
+
         public static string InsertQuery
         {
             get
@@ -43,7 +46,7 @@ namespace TemperatureDataLogger
             }
         }
 
-        public static void InsertDatabaseInfo(DateTime timeSpan, double temperatureValue, double maxTemp, double minTemp )
+        public static void InsertDatabaseInfo(DateTime timeSpan, double temperatureValue, double maxTemp, double minTemp)
         {
             try
             {
@@ -60,7 +63,7 @@ namespace TemperatureDataLogger
                         int rowsAffected = cmd.ExecuteNonQuery();
                         connStr.Close();
 
-                        if(rowsAffected < 0)
+                        if (rowsAffected < 0)
                         {
                             MessageBox.Show("Nenhum dado inserido", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         }
@@ -72,5 +75,30 @@ namespace TemperatureDataLogger
                 MessageBox.Show("Erro ao inserir dados no banco", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        public static DateTime GetDateTemperature(string timeQuery)
+        {
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                conn.Open();
+
+                using (SqlCommand cmd = new SqlCommand(getQuery, conn))
+                {
+                    DateTime dataHora = DateTime.ParseExact(timeQuery, "dd/MM/yyyy HH:mm", null);
+                    cmd.Parameters.Add("@DataHora", System.Data.SqlDbType.DateTime).Value = dataHora;
+
+                    object result = cmd.ExecuteScalar();
+                    if (result != null && result != DBNull.Value)
+                    {
+                        return Convert.ToDateTime(result);
+                    }
+                    else
+                    {
+                        throw new Exception("Item não encontrado");
+                    }
+                }
+            }
+        }
+
     }
 }

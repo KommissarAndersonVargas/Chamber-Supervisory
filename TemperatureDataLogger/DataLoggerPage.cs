@@ -48,7 +48,7 @@ namespace TemperatureDataLogger
         private void Export_Click(object sender, EventArgs e)
         {
             SaveFileDialog saveFileDialog = new SaveFileDialog();
-            
+
 
             saveFileDialog.Filter = "Excel Files|*.xlsx";
             saveFileDialog.FileName = "Exportado.xlsx";
@@ -68,6 +68,30 @@ namespace TemperatureDataLogger
 
                     package.SaveAs(new FileInfo(saveFileDialog.FileName));
                 }
+            }
+        }
+
+        private void SearchInData_Click(object sender, EventArgs e)
+        {
+            string dateQuery = txtbSearchQuary.Text.ToString();
+            var dateFound = DataBaseQueries.GetDateTemperature(dateQuery);
+            try
+            {
+                foreach (DataGridViewRow row in dataGridView.Rows)
+                {
+                    if (row.Cells[0].Value != null &&
+                     Convert.ToDateTime(row.Cells[0].Value) == dateFound)
+                    {
+                        row.Selected = true;
+                        dataGridView.CurrentCell = row.Cells[0];
+                        break;
+                    }
+                }
+            }
+
+            catch (Exception)
+            {
+                Console.WriteLine();
             }
         }
     }

@@ -113,6 +113,7 @@
             this.SearchInData.Name = "SearchInData";
             this.SearchInData.Size = new System.Drawing.Size(52, 74);
             this.SearchInData.ToolTipText = "Procurar";
+            this.SearchInData.Click += new System.EventHandler(this.SearchInData_Click);
             // 
             // txtbSearchQuary
             // 
