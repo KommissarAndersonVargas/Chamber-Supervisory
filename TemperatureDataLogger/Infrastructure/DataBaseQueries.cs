@@ -12,7 +12,7 @@ namespace TemperatureDataLogger
 {
     public class DataBaseQueries
     {
-        private static string connectionString = @"Data Source=DESKTOP-H0IIS6S\SQL2014;
+        private static readonly string connectionString = @"Data Source=DESKTOP-H0IIS6S\SQL2014;
                   Initial Catalog=Supervisory;
                   Persist Security Info=True;
                   User ID=sa;
@@ -20,14 +20,14 @@ namespace TemperatureDataLogger
                   TrustServerCertificate=True";
 
         // Comando INSERT com parâmetros
-        private static string insertQuery = @"
+        private static readonly string insertQuery = @"
                 INSERT INTO [Supervisory].[dbo].[Temperatures_Table]
                 (Data_and_time, Temperature_Value, Max_Value, Min_Value)
                 VALUES
                 (@DataAndTime, @TemperatureValue, @MaxTemp, @MinTemp);
             ";
 
-        private static string getQuery = "SELECT * FROM Supervisory.dbo.Temperatures_Table " +
+        private static readonly string selectDatallogersDates = "SELECT * FROM Supervisory.dbo.Temperatures_Table " +
                "WHERE Data_and_time >= @DataHora AND Data_and_time < DATEADD(MINUTE, 1, @DataHora)";
 
         public static string InsertQuery
@@ -35,6 +35,14 @@ namespace TemperatureDataLogger
             get
             {
                 return insertQuery;
+            }
+        }
+
+        public static string SelectDatallogerDates
+        {
+            get
+            {
+                return selectDatallogersDates;
             }
         }
 
@@ -82,7 +90,7 @@ namespace TemperatureDataLogger
             {
                 conn.Open();
 
-                using (SqlCommand cmd = new SqlCommand(getQuery, conn))
+                using (SqlCommand cmd = new SqlCommand(SelectDatallogerDates, conn))
                 {
                     DateTime dataHora = DateTime.ParseExact(timeQuery, "dd/MM/yyyy HH:mm", null);
                     cmd.Parameters.Add("@DataHora", System.Data.SqlDbType.DateTime).Value = dataHora;

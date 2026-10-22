@@ -85,7 +85,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataBaseOp\DataBaseQueries.cs" />
+    <Compile Include="Business\IhmBLL.cs" />
+    <Compile Include="Infrastructure\DataBaseQueries.cs" />
     <Compile Include="DataLoggerPage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -176,5 +177,6 @@
   <ItemGroup>
     <None Include="Resources\search_zoom.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

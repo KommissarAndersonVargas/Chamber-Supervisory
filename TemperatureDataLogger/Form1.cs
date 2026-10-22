@@ -5,15 +5,14 @@ using Modbus.Device;
 using System.Net.Sockets;
 using System.Windows.Forms.DataVisualization.Charting;
 using System.Threading;
+using TemperatureDataLogger.Business;
 
 namespace TemperatureDataLogger
 {
     public partial class Form1 : Form
     {
-        private TcpClient client;
-        private IModbusMaster master;
-        private string cache = "x";
-        private int tempo = 0;
+        private string SensorChache = "x";
+        private int ChartTime = 0;
 
         public Form1()
         {
@@ -27,23 +26,6 @@ namespace TemperatureDataLogger
             CommunicationTimmer.Interval = 1000;
             CommunicationTimmer.Tick += Timer_Tick;
             CommunicationTimmer.Start();
-        }
-
-        public void ConfigureIpConnection()
-        {
-            try
-            {
-                client = new TcpClient();
-
-                client.Connect(ipConnectTextBox.Text, 502);
-
-                master = ModbusIpMaster.CreateIp(client);
-            }
-
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Erro ao conectar: {ex.Message}");
-            }
         }
 
         public void LoadVisorConfig()
@@ -60,47 +42,23 @@ namespace TemperatureDataLogger
         {
             try
             {
-                if (master == null) return;
 
-                ushort[] dados = master.ReadHoldingRegisters(1, 0, 1);
+                string modBusValue = IhmBLL.GetModbusTcpData();
 
-                string valor = dados[0].ToString();
+                this.UpdateSensor(SensorChache, modBusValue);
 
-                this.UpdateSensor(cache, valor);
+                var canTurnOnPump = IhmBLL.MayTriggersTheOutput(modBusValue, txtbMaxTemp.Text.ToString(), txtbMinTemp.Text.ToString());
 
-                cache = valor;
-
-                double tempValue = double.Parse(valor);
-                var maxValue = double.TryParse(txtbMaxTemp.Text.ToString(), out double max);
-                var minValue = double.TryParse(txtbMinTemp.Text.ToString(), out double min);
-                var cacheMax = max;
-                var cacheMin = min;   
-                var isntNullTxtbox = !string.IsNullOrEmpty(txtbMaxTemp.Text) && !string.IsNullOrEmpty(txtbMinTemp.Text);
-                var isMinOrMax = tempValue < min || tempValue > max;
-                var canTurnOnPump = isntNullTxtbox && isMinOrMax;
-
-                ChangeConnection(cacheMin, cacheMax, max, min);
+                IhmBLL.TriggersTheOutput(canTurnOnPump);
 
                 if (canTurnOnPump)
                 {
-                          master.WriteSingleRegister(
-                                      1, // slave id (esp geralmente = 1)
-                                      1, // endereço do registrador (reg_cmd)
-                                      1  // valor a escrever
-                                      );
-
                     alarmStateBtn.BackColor = Color.Red;
                     alarmStateBtn.Text = "Alarme: Alarme ocorrendo";
                 }
 
                 else
                 {
-                    master.WriteSingleRegister(
-                              1, // slave id (esp geralmente = 1)
-                              1, // endereço do registrador (reg_cmd)
-                              0  // valor a escrever
-                              );
-
                     alarmStateBtn.BackColor = Color.Chartreuse;
                     alarmStateBtn.Text = "Alarme: Sem alarmes";
                 }
@@ -108,15 +66,7 @@ namespace TemperatureDataLogger
             catch (Exception ex)
             {
                 CommunicationTimmer.Stop();
-                MessageBox.Show($"Falha na comunicação com o ESP {ex.ToString()}", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        private void ChangeConnection(double cacheMin, double cacheMax, double max, double min)
-        {
-            if(cacheMin != min || cacheMax != max)
-            {
-                Thread.Sleep(500);
+                MessageBox.Show($"Falha na comunicação com o ESP {ex.Message}", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -127,11 +77,13 @@ namespace TemperatureDataLogger
                 // Atualiza visor sensor da câmera 
                 RchtSensorDisplay.Text = valor + " °C";
                 //Salva no banco de dados 
-                if(!string.IsNullOrEmpty(txtbMaxTemp.Text) && !string.IsNullOrEmpty(txtbMinTemp.Text))
-                   DataBaseQueries.InsertDatabaseInfo(DateTime.Now, double.Parse(valor), double.Parse(txtbMaxTemp.Text), double.Parse(txtbMinTemp.Text));
+
+                if (!string.IsNullOrEmpty(txtbMaxTemp.Text) && !string.IsNullOrEmpty(txtbMinTemp.Text))
+                    IhmBLL.SaveChangeOfTemperature(double.Parse(valor), double.Parse(txtbMaxTemp.Text), double.Parse(txtbMinTemp.Text));
                 else
-                    DataBaseQueries.InsertDatabaseInfo(DateTime.Now, double.Parse(valor), 0, 0);
+                    IhmBLL.SaveChangeOfTemperature(double.Parse(valor), 0, 0);
             }
+
             AdicionarPontoGrafico(valor);
         }
         public void ConfigurarGraficoSimplesDescalibrado()
@@ -174,9 +126,9 @@ namespace TemperatureDataLogger
 
             double plotValue = int.Parse(valor);
 
-            tempo++;
+            ChartTime++;
 
-            chart.Series["Temperatura"].Points.AddXY(tempo, plotValue);
+            chart.Series["Temperatura"].Points.AddXY(ChartTime, plotValue);
 
             if (chart.Series["Temperatura"].Points.Count > 50)
             {
@@ -184,8 +136,8 @@ namespace TemperatureDataLogger
             }
 
             var chartArea = chart.ChartAreas[0];
-            chartArea.AxisX.Minimum = Math.Max(0, tempo - 50);
-            chartArea.AxisX.Maximum = tempo;
+            chartArea.AxisX.Minimum = Math.Max(0, ChartTime - 50);
+            chartArea.AxisX.Maximum = ChartTime;
 
             chart.Update();
         }
@@ -197,8 +149,9 @@ namespace TemperatureDataLogger
         {
             try
             {
-                ConfigureIpConnection();
+                IhmBLL.ConfigureTCPIpConnection(ipConnectTextBox.Text as string);
                 ConfigureTimer();
+
                 MessageBox.Show("Conectado com sucesso", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
