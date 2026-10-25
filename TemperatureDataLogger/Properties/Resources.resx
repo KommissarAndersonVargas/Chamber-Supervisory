@@ -117,12 +117,39 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AlarmOccurence" xml:space="preserve">
+    <value>Alarme: Alarme ocorrendo</value>
+  </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="camara_fria_valor" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\camara-fria-valor.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="ChartTemperature" xml:space="preserve">
+    <value>Temperatura °C</value>
+  </data>
+  <data name="ChartTemperatureTxt" xml:space="preserve">
+    <value>Temperatura</value>
+  </data>
+  <data name="ChartTime" xml:space="preserve">
+    <value>Tempo (segundos)</value>
+  </data>
+  <data name="ComunicationFail" xml:space="preserve">
+    <value>Falha na comunicação com o ESP {0}</value>
+  </data>
+  <data name="DisplayFont" xml:space="preserve">
+    <value>OCR A Extended</value>
+  </data>
+  <data name="ErrorDuringConnecting" xml:space="preserve">
+    <value>Não foi possível estabelecer uma conexão {0}</value>
+  </data>
+  <data name="ErrorTxt" xml:space="preserve">
+    <value>ERR0R</value>
+  </data>
   <data name="excel" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\excel.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="InfoTxt" xml:space="preserve">
+    <value>Informação</value>
   </data>
   <data name="link" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\link.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -130,8 +157,14 @@
   <data name="meter" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\meter.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="NoAlarmOccurence Alarme:" xml:space="preserve">
+    <value>Sem alarmes</value>
+  </data>
   <data name="save_chart" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\save_chart.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SdfImageFilter" xml:space="preserve">
+    <value>PNG Image|*.png|JPEG Image|*.jpg|Bitmap Image|*.bmp</value>
   </data>
   <data name="search_zoom" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\search_zoom.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -142,8 +175,14 @@
   <data name="String1" xml:space="preserve">
     <value>camara-fria-valor</value>
   </data>
+  <data name="SucessfulyConnected" xml:space="preserve">
+    <value>Conectado com sucesso</value>
+  </data>
   <data name="warning" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\warning.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="WarningTxt" xml:space="preserve">
+    <value>Alerta</value>
   </data>
   <data name="_3994380_access_enter_input_login_sign_in_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\3994380_access_enter_input_login_sign in_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>

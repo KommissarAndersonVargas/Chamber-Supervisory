@@ -81,6 +81,15 @@ namespace TemperatureDataLogger.Properties {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Alarme: Alarme ocorrendo.
+        /// </summary>
+        internal static string AlarmOccurence {
+            get {
+                return ResourceManager.GetString("AlarmOccurence", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap camara_fria_valor {
@@ -91,12 +100,84 @@ namespace TemperatureDataLogger.Properties {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Temperatura °C.
+        /// </summary>
+        internal static string ChartTemperature {
+            get {
+                return ResourceManager.GetString("ChartTemperature", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Temperatura.
+        /// </summary>
+        internal static string ChartTemperatureTxt {
+            get {
+                return ResourceManager.GetString("ChartTemperatureTxt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Tempo (segundos).
+        /// </summary>
+        internal static string ChartTime {
+            get {
+                return ResourceManager.GetString("ChartTime", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Falha na comunicação com o ESP {0}.
+        /// </summary>
+        internal static string ComunicationFail {
+            get {
+                return ResourceManager.GetString("ComunicationFail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a OCR A Extended.
+        /// </summary>
+        internal static string DisplayFont {
+            get {
+                return ResourceManager.GetString("DisplayFont", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Não foi possível estabelecer uma conexão {0}.
+        /// </summary>
+        internal static string ErrorDuringConnecting {
+            get {
+                return ResourceManager.GetString("ErrorDuringConnecting", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a ERR0R.
+        /// </summary>
+        internal static string ErrorTxt {
+            get {
+                return ResourceManager.GetString("ErrorTxt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap excel {
             get {
                 object obj = ResourceManager.GetObject("excel", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Informação.
+        /// </summary>
+        internal static string InfoTxt {
+            get {
+                return ResourceManager.GetString("InfoTxt", resourceCulture);
             }
         }
         
@@ -121,12 +202,30 @@ namespace TemperatureDataLogger.Properties {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Sem alarmes.
+        /// </summary>
+        internal static string NoAlarmOccurence_Alarme_ {
+            get {
+                return ResourceManager.GetString("NoAlarmOccurence Alarme:", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap save_chart {
             get {
                 object obj = ResourceManager.GetObject("save_chart", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a PNG Image|*.png|JPEG Image|*.jpg|Bitmap Image|*.bmp.
+        /// </summary>
+        internal static string SdfImageFilter {
+            get {
+                return ResourceManager.GetString("SdfImageFilter", resourceCulture);
             }
         }
         
@@ -159,12 +258,30 @@ namespace TemperatureDataLogger.Properties {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Conectado com sucesso.
+        /// </summary>
+        internal static string SucessfulyConnected {
+            get {
+                return ResourceManager.GetString("SucessfulyConnected", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap warning {
             get {
                 object obj = ResourceManager.GetObject("warning", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Alerta.
+        /// </summary>
+        internal static string WarningTxt {
+            get {
+                return ResourceManager.GetString("WarningTxt", resourceCulture);
             }
         }
     }

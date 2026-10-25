@@ -3,20 +3,23 @@
   "WorkspaceRootPath": "C:\\Users\\Usuario\\source\\repos\\TestSequorAPI\\API\\TemperatureDataLogger\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{26787A01-EFB7-4F67-A8F2-7BA103766C97}|TemperatureDataLogger\\TemperatureDataLogger.csproj|C:\\Users\\Usuario\\source\\repos\\TestSequorAPI\\API\\TemperatureDataLogger\\temperaturedatalogger\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{26787A01-EFB7-4F67-A8F2-7BA103766C97}|TemperatureDataLogger\\TemperatureDataLogger.csproj|c:\\users\\usuario\\source\\repos\\testsequorapi\\api\\temperaturedatalogger\\temperaturedatalogger\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{26787A01-EFB7-4F67-A8F2-7BA103766C97}|TemperatureDataLogger\\TemperatureDataLogger.csproj|solutionrelative:temperaturedatalogger\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{26787A01-EFB7-4F67-A8F2-7BA103766C97}|TemperatureDataLogger\\TemperatureDataLogger.csproj|c:\\users\\usuario\\source\\repos\\testsequorapi\\api\\temperaturedatalogger\\temperaturedatalogger\\business\\ihmbll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{26787A01-EFB7-4F67-A8F2-7BA103766C97}|TemperatureDataLogger\\TemperatureDataLogger.csproj|C:\\Users\\Usuario\\source\\repos\\TestSequorAPI\\API\\TemperatureDataLogger\\temperaturedatalogger\\business\\ihmbll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{26787A01-EFB7-4F67-A8F2-7BA103766C97}|TemperatureDataLogger\\TemperatureDataLogger.csproj|solutionrelative:temperaturedatalogger\\business\\ihmbll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{26787A01-EFB7-4F67-A8F2-7BA103766C97}|TemperatureDataLogger\\TemperatureDataLogger.csproj|C:\\Users\\Usuario\\source\\repos\\TestSequorAPI\\API\\TemperatureDataLogger\\temperaturedatalogger\\infrastructure\\databasequeries.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{26787A01-EFB7-4F67-A8F2-7BA103766C97}|TemperatureDataLogger\\TemperatureDataLogger.csproj|solutionrelative:temperaturedatalogger\\infrastructure\\databasequeries.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{00000000-0000-0000-0000-000000000000}|\u003CSolution\u003E|TemperatureDataLogger||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
     },
     {
       "AbsoluteMoniker": "D:0:0:{26787A01-EFB7-4F67-A8F2-7BA103766C97}|TemperatureDataLogger\\TemperatureDataLogger.csproj|C:\\Users\\Usuario\\source\\repos\\TestSequorAPI\\API\\TemperatureDataLogger\\temperaturedatalogger\\dataloggerpage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{26787A01-EFB7-4F67-A8F2-7BA103766C97}|TemperatureDataLogger\\TemperatureDataLogger.csproj|solutionrelative:temperaturedatalogger\\dataloggerpage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26787A01-EFB7-4F67-A8F2-7BA103766C97}|TemperatureDataLogger\\TemperatureDataLogger.csproj|C:\\Users\\Usuario\\source\\repos\\TestSequorAPI\\API\\TemperatureDataLogger\\temperaturedatalogger\\infrastructure\\databasequeries.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26787A01-EFB7-4F67-A8F2-7BA103766C97}|TemperatureDataLogger\\TemperatureDataLogger.csproj|solutionrelative:temperaturedatalogger\\infrastructure\\databasequeries.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{26787A01-EFB7-4F67-A8F2-7BA103766C97}|TemperatureDataLogger\\TemperatureDataLogger.csproj|C:\\Users\\Usuario\\source\\repos\\TestSequorAPI\\API\\TemperatureDataLogger\\temperaturedatalogger\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -45,6 +48,10 @@
     {
       "AbsoluteMoniker": "D:0:0:{26787A01-EFB7-4F67-A8F2-7BA103766C97}|TemperatureDataLogger\\TemperatureDataLogger.csproj|C:\\Users\\Usuario\\source\\repos\\TestSequorAPI\\API\\TemperatureDataLogger\\temperaturedatalogger\\properties\\assemblyinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{26787A01-EFB7-4F67-A8F2-7BA103766C97}|TemperatureDataLogger\\TemperatureDataLogger.csproj|solutionrelative:temperaturedatalogger\\properties\\assemblyinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26787A01-EFB7-4F67-A8F2-7BA103766C97}|TemperatureDataLogger\\TemperatureDataLogger.csproj|c:\\users\\usuario\\source\\repos\\testsequorapi\\api\\temperaturedatalogger\\temperaturedatalogger\\properties\\resources.resx||{FF4D6ACA-9352-4A5F-821E-F4D6EBDCAB11}",
+      "RelativeMoniker": "D:0:0:{26787A01-EFB7-4F67-A8F2-7BA103766C97}|TemperatureDataLogger\\TemperatureDataLogger.csproj|solutionrelative:temperaturedatalogger\\properties\\resources.resx||{FF4D6ACA-9352-4A5F-821E-F4D6EBDCAB11}"
     }
   ],
   "DocumentGroupContainers": [
@@ -54,8 +61,20 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 5,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "TemperatureDataLogger",
+              "DocumentMoniker": "C:\\Users\\Usuario\\source\\repos\\TestSequorAPI\\API\\TemperatureDataLogger\\TemperatureDataLogger\\TemperatureDataLogger.csproj",
+              "RelativeDocumentMoniker": "TemperatureDataLogger\\TemperatureDataLogger.csproj",
+              "ToolTip": "C:\\Users\\Usuario\\source\\repos\\TestSequorAPI\\API\\TemperatureDataLogger\\TemperatureDataLogger\\TemperatureDataLogger.csproj",
+              "RelativeToolTip": "TemperatureDataLogger\\TemperatureDataLogger.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-10-25T18:39:21.717Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 1,
@@ -64,21 +83,22 @@
               "RelativeDocumentMoniker": "TemperatureDataLogger\\Business\\IhmBLL.cs",
               "ToolTip": "C:\\Users\\Usuario\\source\\repos\\TestSequorAPI\\API\\TemperatureDataLogger\\TemperatureDataLogger\\Business\\IhmBLL.cs",
               "RelativeToolTip": "TemperatureDataLogger\\Business\\IhmBLL.cs",
-              "ViewState": "AQIAACcAAAAAAAAAAIAwwCkAAAAsAAAA",
+              "ViewState": "AQIAABgAAAAAAAAAAAAcwEUAAAAuAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-10-15T17:06:12.181Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "DataLoggerPage.cs [Design]",
               "DocumentMoniker": "C:\\Users\\Usuario\\source\\repos\\TestSequorAPI\\API\\TemperatureDataLogger\\TemperatureDataLogger\\DataLoggerPage.cs",
               "RelativeDocumentMoniker": "TemperatureDataLogger\\DataLoggerPage.cs",
               "ToolTip": "C:\\Users\\Usuario\\source\\repos\\TestSequorAPI\\API\\TemperatureDataLogger\\TemperatureDataLogger\\DataLoggerPage.cs [Design]",
               "RelativeToolTip": "TemperatureDataLogger\\DataLoggerPage.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-18T20:58:35.131Z"
+              "WhenOpened": "2026-04-18T20:58:35.131Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
@@ -88,13 +108,14 @@
               "RelativeDocumentMoniker": "TemperatureDataLogger\\DataLoggerPage.cs",
               "ToolTip": "C:\\Users\\Usuario\\source\\repos\\TestSequorAPI\\API\\TemperatureDataLogger\\TemperatureDataLogger\\DataLoggerPage.cs",
               "RelativeToolTip": "TemperatureDataLogger\\DataLoggerPage.cs",
-              "ViewState": "AQIAAA8AAAAAAAAAAAAAABEAAAAFAAAA",
+              "ViewState": "AQIAAA8AAAAAAAAAAAAAABYAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-19T23:23:36.995Z"
+              "WhenOpened": "2026-04-19T23:23:36.995Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "DataBaseQueries.cs",
               "DocumentMoniker": "C:\\Users\\Usuario\\source\\repos\\TestSequorAPI\\API\\TemperatureDataLogger\\TemperatureDataLogger\\Infrastructure\\DataBaseQueries.cs",
               "RelativeDocumentMoniker": "TemperatureDataLogger\\Infrastructure\\DataBaseQueries.cs",
@@ -102,8 +123,7 @@
               "RelativeToolTip": "TemperatureDataLogger\\Infrastructure\\DataBaseQueries.cs",
               "ViewState": "AQIAAFYAAAAAAAAAAAAIwCYAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-18T19:38:22.67Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-18T19:38:22.67Z"
             },
             {
               "$type": "Document",
@@ -113,14 +133,14 @@
               "RelativeDocumentMoniker": "TemperatureDataLogger\\Form1.cs",
               "ToolTip": "C:\\Users\\Usuario\\source\\repos\\TestSequorAPI\\API\\TemperatureDataLogger\\TemperatureDataLogger\\Form1.cs",
               "RelativeToolTip": "TemperatureDataLogger\\Form1.cs",
-              "ViewState": "AQIAAIwAAAAAAAAAAAAuwJIAAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAeAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-15T13:40:39.189Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\Usuario\\source\\repos\\TestSequorAPI\\API\\TemperatureDataLogger\\TemperatureDataLogger\\Program.cs",
               "RelativeDocumentMoniker": "TemperatureDataLogger\\Program.cs",
@@ -132,7 +152,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "readme.txt",
               "DocumentMoniker": "C:\\Users\\Usuario\\source\\repos\\TestSequorAPI\\API\\TemperatureDataLogger\\packages\\EPPlus.7.7.0\\readme.txt",
               "RelativeDocumentMoniker": "packages\\EPPlus.7.7.0\\readme.txt",
@@ -144,18 +164,19 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "TemperatureDataSet.xsd",
               "DocumentMoniker": "C:\\Users\\Usuario\\source\\repos\\TestSequorAPI\\API\\TemperatureDataLogger\\TemperatureDataLogger\\DataSet\\TemperatureDataSet.xsd",
               "RelativeDocumentMoniker": "TemperatureDataLogger\\DataSet\\TemperatureDataSet.xsd",
               "ToolTip": "C:\\Users\\Usuario\\source\\repos\\TestSequorAPI\\API\\TemperatureDataLogger\\TemperatureDataLogger\\DataSet\\TemperatureDataSet.xsd",
               "RelativeToolTip": "TemperatureDataLogger\\DataSet\\TemperatureDataSet.xsd",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003579|",
-              "WhenOpened": "2026-04-20T22:12:06.298Z"
+              "WhenOpened": "2026-04-20T22:12:06.298Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "readme.txt",
               "DocumentMoniker": "C:\\Users\\Usuario\\source\\repos\\TestSequorAPI\\API\\TemperatureDataLogger\\packages\\EPPlus.8.5.3\\readme.txt",
               "RelativeDocumentMoniker": "packages\\EPPlus.8.5.3\\readme.txt",
@@ -167,7 +188,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "Form1.Designer.cs",
               "DocumentMoniker": "C:\\Users\\Usuario\\source\\repos\\TestSequorAPI\\API\\TemperatureDataLogger\\TemperatureDataLogger\\Form1.Designer.cs",
               "RelativeDocumentMoniker": "TemperatureDataLogger\\Form1.Designer.cs",
@@ -175,12 +196,11 @@
               "RelativeToolTip": "TemperatureDataLogger\\Form1.Designer.cs",
               "ViewState": "AQIAABYBAAAAAAAAAAAlwCYBAAAPAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-21T16:33:10.869Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-21T16:33:10.869Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "AssemblyInfo.cs",
               "DocumentMoniker": "C:\\Users\\Usuario\\source\\repos\\TestSequorAPI\\API\\TemperatureDataLogger\\TemperatureDataLogger\\Properties\\AssemblyInfo.cs",
               "RelativeDocumentMoniker": "TemperatureDataLogger\\Properties\\AssemblyInfo.cs",

@@ -73,8 +73,9 @@ namespace TemperatureDataLogger
 
         private void SearchInData_Click(object sender, EventArgs e)
         {
-            string dateQuery = txtbSearchQuary.Text.ToString();
+            string dateQuery = txtbSearchQuary.Text;
             var dateFound = DataBaseQueries.GetDateTemperature(dateQuery);
+
             try
             {
                 foreach (DataGridViewRow row in dataGridView.Rows)

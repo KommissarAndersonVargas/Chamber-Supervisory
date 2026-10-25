@@ -1,10 +1,7 @@
 ﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
-using Modbus.Device;
-using System.Net.Sockets;
 using System.Windows.Forms.DataVisualization.Charting;
-using System.Threading;
 using TemperatureDataLogger.Business;
 
 namespace TemperatureDataLogger
@@ -13,6 +10,8 @@ namespace TemperatureDataLogger
     {
         private string SensorChache = "x";
         private int ChartTime = 0;
+        private readonly int TimerInterval = 1000;
+        private readonly int ChartSamples = 50;
 
         public Form1()
         {
@@ -23,19 +22,19 @@ namespace TemperatureDataLogger
 
         public void ConfigureTimer()
         {
-            CommunicationTimmer.Interval = 1000;
+            CommunicationTimmer.Interval = TimerInterval;
             CommunicationTimmer.Tick += Timer_Tick;
             CommunicationTimmer.Start();
         }
 
         public void LoadVisorConfig()
         {
-            RchtSensorDisplay.Font = new Font("OCR A Extended", 36, FontStyle.Bold);
+            RchtSensorDisplay.Font = new Font(Properties.Resources.DisplayFont, 36, FontStyle.Bold);
             RchtSensorDisplay.BackColor = Color.Black;
             RchtSensorDisplay.ForeColor = Color.Red;
             RchtSensorDisplay.BorderStyle = BorderStyle.None;
             RchtSensorDisplay.SelectionAlignment = HorizontalAlignment.Center;
-            RchtSensorDisplay.Text = "ERR0R";
+            RchtSensorDisplay.Text = Properties.Resources.ErrorTxt;
         }
 
         private void Timer_Tick(object sender, EventArgs e)
@@ -47,26 +46,33 @@ namespace TemperatureDataLogger
 
                 this.UpdateSensor(SensorChache, modBusValue);
 
-                var canTurnOnPump = IhmBLL.MayTriggersTheOutput(modBusValue, txtbMaxTemp.Text.ToString(), txtbMinTemp.Text.ToString());
+                var canTurnOnPump = IhmBLL.MayTriggersTheOutput(
+                    modBusValue,
+                    txtbMaxTemp.Text,
+                    txtbMinTemp.Text);
 
                 IhmBLL.TriggersTheOutput(canTurnOnPump);
 
                 if (canTurnOnPump)
                 {
                     alarmStateBtn.BackColor = Color.Red;
-                    alarmStateBtn.Text = "Alarme: Alarme ocorrendo";
+                    alarmStateBtn.Text = Properties.Resources.AlarmOccurence;
                 }
 
                 else
                 {
                     alarmStateBtn.BackColor = Color.Chartreuse;
-                    alarmStateBtn.Text = "Alarme: Sem alarmes";
+                    alarmStateBtn.Text = Properties.Resources.NoAlarmOccurence_Alarme_;
                 }
             }
-            catch (Exception ex)
+            catch (Exception ex) // colocar excessao junto no ressource
             {
                 CommunicationTimmer.Stop();
-                MessageBox.Show($"Falha na comunicação com o ESP {ex.Message}", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(
+                    string.Format(Properties.Resources.ComunicationFail,ex.Message),
+                    Properties.Resources.WarningTxt, 
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
             }
         }
 
@@ -79,7 +85,10 @@ namespace TemperatureDataLogger
                 //Salva no banco de dados 
 
                 if (!string.IsNullOrEmpty(txtbMaxTemp.Text) && !string.IsNullOrEmpty(txtbMinTemp.Text))
-                    IhmBLL.SaveChangeOfTemperature(double.Parse(valor), double.Parse(txtbMaxTemp.Text), double.Parse(txtbMinTemp.Text));
+                    IhmBLL.SaveChangeOfTemperature(
+                        double.Parse(valor),
+                        double.Parse(txtbMaxTemp.Text),
+                        double.Parse(txtbMinTemp.Text));
                 else
                     IhmBLL.SaveChangeOfTemperature(double.Parse(valor), 0, 0);
             }
@@ -96,20 +105,22 @@ namespace TemperatureDataLogger
             {
                 AxisX =
                 {
-                    Title = "Tempo (segundos)",
+                    Title = Properties.Resources.ChartTime,
                     Minimum = 0,
                     Interval = 1,
                     MajorGrid = { LineColor = Color.LightGray }
                 },
                 AxisY =
                 {
-                    Title = "Temperatura °C",
+                    Title = Properties.Resources.ChartTemperature,
                     MajorGrid = { LineColor = Color.LightGray }
                 }
             };
             chart.ChartAreas.Add(chartArea);
 
-            chart.Series.Add(new System.Windows.Forms.DataVisualization.Charting.Series("Temperatura") // adiciinado o namespace para evitar conflito de bibliotecas de mesmo nome
+            chart.Series.Add(
+                new System.Windows.Forms.DataVisualization.Charting
+                .Series(Properties.Resources.ChartTemperatureTxt) // adiciinado o namespace para evitar conflito de bibliotecas de mesmo nome
             {
                 // configuração geal de cores no grafico
                 ChartType = SeriesChartType.Line,
@@ -128,15 +139,15 @@ namespace TemperatureDataLogger
 
             ChartTime++;
 
-            chart.Series["Temperatura"].Points.AddXY(ChartTime, plotValue);
+            chart.Series[Properties.Resources.ChartTemperatureTxt].Points.AddXY(ChartTime, plotValue);
 
-            if (chart.Series["Temperatura"].Points.Count > 50)
+            if (chart.Series[Properties.Resources.ChartTemperatureTxt].Points.Count > ChartSamples)
             {
-                chart.Series["Temperatura"].Points.RemoveAt(0);
+                chart.Series[Properties.Resources.ChartTemperatureTxt].Points.RemoveAt(0);
             }
 
             var chartArea = chart.ChartAreas[0];
-            chartArea.AxisX.Minimum = Math.Max(0, ChartTime - 50);
+            chartArea.AxisX.Minimum = Math.Max(0, ChartTime - ChartSamples);
             chartArea.AxisX.Maximum = ChartTime;
 
             chart.Update();
@@ -152,11 +163,19 @@ namespace TemperatureDataLogger
                 IhmBLL.ConfigureTCPIpConnection(ipConnectTextBox.Text as string);
                 ConfigureTimer();
 
-                MessageBox.Show("Conectado com sucesso", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(
+                    Properties.Resources.SucessfulyConnected,
+                    Properties.Resources.InfoTxt,
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
             }
-            catch (Exception ex)
+            catch (Exception ex) // colocar excessao junto
             {
-                MessageBox.Show($"Não foi possível estabelecer uma coenxão {ex.ToString()}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(
+                    string.Format(Properties.Resources.ErrorDuringConnecting, ex.Message),
+                    Properties.Resources.ErrorTxt,
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
             }
         }
 
@@ -169,7 +188,7 @@ namespace TemperatureDataLogger
         private void SaveChart_Click(object sender, EventArgs e)
         {
             SaveFileDialog sfd = new SaveFileDialog();
-            sfd.Filter = "PNG Image|*.png|JPEG Image|*.jpg|Bitmap Image|*.bmp";
+            sfd.Filter = Properties.Resources.SdfImageFilter;
 
             if (sfd.ShowDialog() == DialogResult.OK)
             {
